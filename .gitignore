@@ -1,0 +1,4 @@
+/node_modules
+/.vscode
+*.log
+/vue-app/node_modules
