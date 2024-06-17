@@ -34,9 +34,10 @@ public class UserServiceImpl implements UserService {
     public ResultDTO editById(UserDTO uDto) {
         rDto = new ResultDTO();
         int state = uDao.editById(uDto);
+        System.out.println(state);
         if(state == 1){
             rDto.setState(true);
-            rDto.setMessage("사용자 성공 실패");
+            rDto.setMessage("사용자 수정 성공");
             
         }else{
             rDto.setState(false);
@@ -47,11 +48,31 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResultDTO delete(int no) {
+        rDto = new ResultDTO();
+        int state = uDao.delete(no);
+        if(state == 1){
+            rDto.setState(true);
+            rDto.setMessage("사용자 삭제 성공");
+            
+        }else{
+            rDto.setState(false);
+            rDto.setMessage("사용자 삭제 실패");
+        }
         return rDto;    
     }
 
     @Override
     public ResultDTO save(UserDTO uDto) {
+        rDto = new ResultDTO();
+        int state = uDao.save(uDto);
+        if(state == 1){
+            rDto.setState(true);
+            rDto.setMessage("사용자 저장 성공");
+            
+        }else{
+            rDto.setState(false);
+            rDto.setMessage("사용자 저장 실패");
+        }
         return rDto;    
     }
     

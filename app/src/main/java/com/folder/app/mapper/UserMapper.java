@@ -20,7 +20,7 @@ public interface UserMapper {
     @Update("update user set del = true where no =  #{no}")
     public int delete(int no);
 
-    @Insert("insert into user {name,email,pwd,gender} value {#{name},#{email},#{pwd},#{gender}}")
+    @Insert("insert into user (name,email,pwd,gender) value (#{name},#{email},#{pwd},#{gender})")
     public int save(UserDTO uDto);
 
     @Select("select 1")

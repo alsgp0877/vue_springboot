@@ -1,14 +1,22 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/user">UserList</router-link> |
-    <router-link to="/user/findById">UserSelect</router-link> |
-    <router-link to="/user/editById">UserUpdate</router-link> |
-    <router-link to="/user/save">UserCreate</router-link>
-  </nav>
   <router-view/>
 </template>
+
+<script>
+export default{
+  created(){
+    const user = sessionStorage.getItem('setUser');
+    if(user){
+      console.log('사용자 정보가 있습니다.');
+    }
+  },
+  methods:{
+    base64(user){
+      return window.btoa(encodeURIComponent(window.atob(user)))
+    }
+  }
+}
+</script>
 
 <style>
 #app {

@@ -8,13 +8,22 @@
 
 <script>
 import axios from 'axios'
-const uForm = {name:'테스트',email='test@email.com',pwd='1234',gender=true}
+let uForm = {
+  no:1,
+  name:'테스트',
+  email:'test@gmail.com',
+  pwd:'1234',
+  gender:true
+}
+let params={
+  params:{no:0}
+}
 export default {
   name: 'HomeView',
   methods:{
     getData(){
       axios
-      .post('http://localhost:8080/editById', uForm)
+      .post('http://localhost:8080/findAll')
       .then((response) => {
         console.log(response)
       })

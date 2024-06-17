@@ -1,8 +1,11 @@
 package com.folder.app.dto;
-import lombok.Data;
+//import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
-@Data
+@Getter 
+@Setter
 public class ResultDTO{
 
     private String message;

@@ -23,12 +23,12 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public int delete(int no) {
-        return 0;     
+        return uMapper.delete(no);    
     }
 
     @Override
     public int save(UserDTO uDto) {
-        return 0;     
+        return uMapper.save(uDto);     
     }
     
     
